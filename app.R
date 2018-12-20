@@ -36,8 +36,7 @@ server <- function(input, output, session) {
   })
   
   output$title <- renderText({
-    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=EYkE3mXri28G7MVbslzACgDkcMtQIDoTq4jA6c6K',sep='')
-    #path <- "eurlex/directory_code"
+    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=myapikey',sep='')
     response <- GET(url)
     body<-content(response,'text', encoding = "UTF-8")
     body<-fromJSON(body)
@@ -45,8 +44,7 @@ server <- function(input, output, session) {
     mytitle
   })
   output$picture <-  renderUI({
-    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=EYkE3mXri28G7MVbslzACgDkcMtQIDoTq4jA6c6K',sep='')
-    #path <- "eurlex/directory_code"
+    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=myapikey',sep='')
     response <- GET(url)
     body<-content(response,'text', encoding = "UTF-8")
     body<-fromJSON(body)
@@ -54,8 +52,7 @@ server <- function(input, output, session) {
     tags$img(src = myimage)
   })
   output$explanation <- renderText({
-    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=EYkE3mXri28G7MVbslzACgDkcMtQIDoTq4jA6c6K',sep='')
-    #path <- "eurlex/directory_code"
+    url  <- paste('https://api.nasa.gov/planetary/apod?date=',date(),'&api_key=myapikey',sep='')
     response <- GET(url)
     body<-content(response,'text', encoding = "UTF-8")
     body<-fromJSON(body)
